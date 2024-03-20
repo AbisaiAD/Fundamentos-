@@ -1,0 +1,23 @@
+package busqueda;
+import javax.swing.JOptionPane;
+
+public class Busqueda {
+
+    public static void main(String[] args) {
+        boolean nombreEncontrado = false;
+        String nombres[] = {"Maria", "Pedro", "Pepe", "Felipe"};
+        String nombreEntrada = JOptionPane.showInputDialog("Ingrese  nombre: ");
+        buscarNombre(nombres, nombreEntrada);
+        
+    }   
+    
+    public static void buscarNombre(String[] nombres, String nombreEntrada) {
+        for(int i = 0; i < nombres.length; i++) {
+            if(nombreEntrada.equals(nombres[i])) {
+                JOptionPane.showMessageDialog(null, "Nombre encontrado en la lista: " + nombreEntrada + "\nPosición en el arreglo: [" + i + "]");
+                return;
+            }
+        }
+        JOptionPane.showMessageDialog(null, "Nombre no encontrado en la lista" + "\nPosición: -1");        
+    }
+}
